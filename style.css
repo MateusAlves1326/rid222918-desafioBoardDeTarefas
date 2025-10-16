@@ -1,0 +1,353 @@
+/* ============ Base ============ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+/* 1rem = 10px */
+
+body {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #F5F9FF;
+    color: #0f172a;
+}
+
+/* ============ Container ============ */
+main {
+    max-width: 88rem;
+    /* 880px */
+    margin: 6rem auto;
+    /* 60px */
+    background: #fff;
+    border: 0.1rem solid #e2e8f0;
+    border-radius: 1.6rem;
+    /* 16px */
+    box-shadow: 0 1rem 3rem rgba(15, 23, 42, .08);
+    padding: 3.2rem;
+    /* 24px */
+}
+
+h1 {
+    font-size: 2.4rem;
+    /* 24px */
+    font-weight: 800;
+    margin-bottom: 2rem;
+    /* 20px */
+    font-family: "Rubik", sans-serif;
+}
+
+/* ============ Form ============ */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 8rem;
+    /* dois inputs iguais + botão + */
+    gap: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+input[type="text"] {
+    border: 0.1rem solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    background: #fff;
+    width: 100%;
+    font-family: rubik, sans-serif;
+}
+
+button.add {
+    border: none;
+    background: #3b82f6;
+    color: #fff;
+    font-weight: 700;
+    border-radius: .4rem;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: background .2s;
+    width: 4.4rem;
+    height: 4.4rem;
+    
+}
+
+button.add:hover {
+    background: #2563eb;
+}
+
+/* cabeçalho opcional das colunas (desktop/tablet) */
+.header-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 8rem;
+    font-weight: 700;
+    background: #f8fafc;
+    border: 0.1rem solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* ============ Lista / Cards ============ */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+     align-items: start;
+    gap: 1rem;
+    border: 0.1rem solid #e2e8f0;
+    border-radius: 1.2rem;
+    background: #fff;
+    padding: 1.6rem;
+    box-shadow: 0 0.2rem 1rem #0f172a0a;
+    transition: box-shadow .2s, border-color .2s;
+}
+
+.row:hover {
+    border-color: #dbe4f0;
+    box-shadow: 0 0.6rem 1.8rem rgba(15, 23, 42, .07);
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0f172a;
+    transition: color .2s, opacity .2s;
+    
+}
+
+.meta {
+    font-size: 1.4rem;
+    color: #64748b;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.8rem;
+    transition: color .2s, opacity .2s;
+}
+
+/* ============ Etiqueta padrão (neutra) ============ */
+.badge {
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: lowercase;
+    display: inline-block;
+    border: 0.1rem solid #B1BACB;
+    color: #B1BACB;
+    background: #fff;
+}
+
+/* ============ Botões (ação) ============ */
+.btn-concluir {
+    border: none;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 700;
+    border-radius: .4rem;
+    padding: 1rem 1.4rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    width: 12rem;
+    height: 4.4rem;
+    transition: background .2s, transform .06s;
+
+    /* centraliza o texto */
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    justify-content: center;
+    line-height: 1;
+}
+
+.btn-concluir:hover {
+    background: #1e40af;
+}
+
+.btn-concluir:active {
+    transform: translateY(0.1rem);
+}
+
+.btn-check {
+    width: 4rem;
+    height: 4rem;
+    /* 40x40 */
+    border-radius: 50%;
+    background: #06d6a0;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    justify-self: end;
+}
+
+.btn-check img {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+/* ============ Estado concluído ============ */
+.row.done .title {
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+.row.done .meta {
+    color: #94a3b8;
+}
+
+.row.done .badge {
+    border-color: #B1BACB;
+    color: #B1BACB;
+    opacity: .7;
+}
+
+/* ============ Rodapé ============ */
+footer {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #B1BACB;
+}
+
+#footerCounter {
+    text-align: right;
+}
+
+/* ============ Mobile (<= 480px) ============ */
+@media (max-width: 48rem) {
+    main {
+        max-width: 100%;
+        margin: 0;
+        padding: 2rem 1.6rem 2.4rem;
+        border-radius: 0;
+        min-height: 100dvh;
+        box-shadow: none;
+        border-left: 0.1rem solid #e6ebf2;
+        border-right: 0.1rem solid #e6ebf2;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+        line-height: 1.1;
+        margin-bottom: 1.6rem;
+        color: #10194f;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 5.5rem;;
+        gap: 1.2rem;
+        margin: 0 0 2rem;
+    }
+
+    input[type="text"] {
+        height: 4.4rem;
+        border-radius: 1.2rem;
+        font-size: 1.5rem;
+        padding: 0 1.4rem;
+    }
+
+    button.add {
+        width: 100%;
+        height: 4.4rem;
+        border-radius: 0.8rem;
+        font-size: 2.2rem;
+    }
+
+    .header-row {
+        display: none;
+    }
+
+    /* esconde o cabeçalho de colunas no mobile */
+
+    .task-list {
+        gap: 1.4rem;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+        /* empilha */
+        gap: 1rem;
+        padding: 1.8rem 1.6rem;
+        border-radius: 1.8rem;
+        box-shadow: 0 0.4rem 1.6rem rgba(16, 25, 79, .06);
+    }
+
+    .name {
+        gap: 1rem;
+    }
+
+    .title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #14203a;
+    }
+
+    .meta {
+        font-size: 1.3rem;
+        color: #9aa4b5;
+        gap: 1rem;
+    }
+
+    .btn-concluir {
+        width: 15rem;
+        height: 4rem;
+        margin: 0.2rem auto 0;
+        border-radius: 0.8rem;
+        font-size: 1.6rem;
+    }
+
+    .btn-check {
+        width: 4.4rem;
+        height: 4.4rem;
+        margin: 0.2rem auto 0;
+    }
+
+    footer {
+        margin-top: 1.8rem;
+        padding: 1rem 0 0;
+        border-top: 0.1rem solid #eef1f6;
+        font-size: 1.3rem;
+        color: #9aa4b5;
+    }
+}
+
+/* ============ Tablet (481–768px) ============ */
+@media (min-width: 48.1rem) and (max-width: 76.8rem) {
+    form {
+        grid-template-columns: 1fr 1fr 10rem;
+    }
+
+    /* 100px */
+    .row {
+        grid-template-columns: 1fr 1fr 12rem;
+    }
+
+    /* 120px */
+    .btn-concluir {
+        width: 16rem;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .btn-check {
+        margin-left: auto;
+        margin-right: 0;
+    }
+}
